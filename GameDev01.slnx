@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="GameDev01/GameDev01.vcxproj" Id="fef41bda-f8c9-4f90-aa40-19da8d2e6ebe" />
+  <Project Path="GameDev_Contents/GameDev_Contents.vcxproj" Id="7b788c1f-8f47-4518-8042-cec46794c557" />
+  <Project Path="GameDev_Source/GameDev_Source.vcxitems" Id="a53fec28-d1bb-4e94-a6dc-18ca4a629d02" />
+</Solution>

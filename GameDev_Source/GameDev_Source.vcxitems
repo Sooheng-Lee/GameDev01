@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{a53fec28-d1bb-4e94-a6dc-18ca4a629d02}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)devApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CommonHeader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)devInputManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)devObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)devTimeManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Enum.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Struct.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)devApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)devInputManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)devObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)devTimeManager.cpp" />
+  </ItemGroup>
+</Project>

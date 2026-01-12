@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)devApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)devInputManager.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)devTimeManager.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)devObject.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)devApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)devInputManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)devTimeManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)devObject.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CommonHeader.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Struct.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Enum.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Managers">
+      <UniqueIdentifier>{a276f3bb-5ba3-4365-af32-841466290b6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{d3e3a178-5747-4378-b881-ed1bf9ccabc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{a72bd9e0-a171-4aaa-9558-ad02c52b7050}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

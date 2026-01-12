@@ -1,0 +1,36 @@
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.db
+*.opendb
+*.sdf
+*.ipch
+*.ap
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+[Bb]in/
+[Oo]bj/
+*.ilk
+*.pdb
+*.idb
+*.tlog
+*.log
+*.obj
+*.exe
+*.dll
+*.lib
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code (if used)
+.vscode/
