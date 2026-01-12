@@ -4,7 +4,7 @@
 #include "devSpriteRenderer.h"
 namespace dev
 {
-	GameObject::GameObject() : _position{ 0.0f, 0.0f }
+	GameObject::GameObject() : _position{ 0.0f, 0.0f }, _components{}
 	{
 	}
 

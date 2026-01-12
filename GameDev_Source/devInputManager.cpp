@@ -29,11 +29,9 @@ namespace dev
 		_keys.resize(keyNum);
 		for (int idx = 0; idx < keyNum; ++idx)
 		{
-			Key key = {};
-			key.code = (eKeyCode)idx;
-			key.bPressed = false;
-			key.state = eKeyState::None;
-			_keys.push_back(key);
+			_keys[idx].code = (eKeyCode)idx;
+			_keys[idx].bPressed = false;
+			_keys[idx].state = eKeyState::None;
 		}
 	}
 
@@ -47,7 +45,10 @@ namespace dev
 
 	void InputManager::CheckKeyState()
 	{
-		for (int idx = 0; idx < (size_t)eKeyCode::END; ++idx)
+		if (_keys.empty())
+			return;
+
+		for (int idx = 0; idx < (UINT)eKeyCode::END; ++idx)
 		{
 			if (GetAsyncKeyState(ASCII[idx]) & 0x8000)
 			{
@@ -85,9 +86,9 @@ namespace dev
 
 	void InputManager::EndInput()
 	{
-		_bInputReceiving.store(false);
 		if (_inputThread->joinable())
 		{
+			_bInputReceiving = false;
 			_inputThread->join();
 			_inputThread = nullptr;
 		}
