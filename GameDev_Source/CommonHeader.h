@@ -4,6 +4,8 @@
 #include <thread>
 #include <atomic>
 #include <functional>
+#include <map>
+#include <vector>
 
 #include "Enum.h"
 #include "Struct.h"

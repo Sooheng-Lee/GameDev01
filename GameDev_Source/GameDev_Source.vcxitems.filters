@@ -20,6 +20,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)devSpriteRenderer.cpp">
       <Filter>Components</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)devSceneManager.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)devScene.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)devApplication.h" />
@@ -49,6 +55,12 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)devSpriteRenderer.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)devSceneManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)devScene.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

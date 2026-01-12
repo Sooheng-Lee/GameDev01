@@ -20,6 +20,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)devGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)devInputManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)devObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)devScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)devSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)devSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)devTimeManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Enum.h" />
@@ -31,6 +33,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)devGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)devInputManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)devObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)devScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)devSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)devSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)devTimeManager.cpp" />
   </ItemGroup>
