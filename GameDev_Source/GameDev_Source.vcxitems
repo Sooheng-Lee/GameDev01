@@ -16,16 +16,22 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)devApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonHeader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)devComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)devGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)devInputManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)devObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)devSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)devTimeManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Enum.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Struct.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)devApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)devComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)devGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)devInputManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)devObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)devSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)devTimeManager.cpp" />
   </ItemGroup>
 </Project>

@@ -4,7 +4,7 @@
 
 namespace dev
 {
-	Application::Application() : _hwnd(nullptr), _hdc(nullptr), _backHdc(nullptr), _backBuffer(nullptr), _width(0), _height(0), _bRendering{ false }, _renderThread(nullptr), _posX(10.0f), _posY(10.0f)
+	Application::Application() : _hwnd(nullptr), _hdc(nullptr), _backHdc(nullptr), _backBuffer(nullptr), _width(0), _height(0), _bRendering{ false }, _renderThread(nullptr)
 	{
 
 	}
@@ -12,6 +12,7 @@ namespace dev
 	Application::~Application()
 	{
 		StopRender();
+		GdiplusShutdown(gdiplusToken);
 		InputManager::EndInput();
 	}
 
@@ -34,8 +35,12 @@ namespace dev
 		DeleteObject(oldBitmap);
 		InputManager::Init();
 
+		GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, nullptr);
+
 		BeginRender();
 		InputManager::BeginInput();
+
+		_gameObj.Init();
 	}
 
 	void Application::BeginRender()
@@ -57,29 +62,12 @@ namespace dev
 	void Application::Update()
 	{
 		TimeManager::Update();
+		_gameObj.Update();
 	}
 
 	void Application::LateUpdate()
 	{
-		if (InputManager::GetKey(eKeyCode::A))
-		{
-			_posX -= 200.0f * TimeManager::DeltaTime();
-		}
-
-		if (InputManager::GetKey(eKeyCode::D))
-		{
-			_posX += 200.0f * TimeManager::DeltaTime();
-		}
-
-		if (InputManager::GetKey(eKeyCode::W))
-		{
-			_posY -= 200.0f * TimeManager::DeltaTime();
-		}
-
-		if (InputManager::GetKey(eKeyCode::S))
-		{
-			_posY += 200.0f * TimeManager::DeltaTime();
-		}
+		_gameObj.LateUpdate();
 	}
 
 	void Application::Render()
@@ -88,12 +76,7 @@ namespace dev
 		{
 			Rectangle(_backHdc, 0, 0, _width, _height);
 			TimeManager::Render(_backHdc);
-			// 추후 삭제할 예정.
-			HBRUSH brush = CreateSolidBrush(RGB(255, 0, 0));
-			HBRUSH oldBrush = (HBRUSH)SelectObject(_backHdc, brush);
-			Rectangle(_backHdc, _posX - 25, _posY - 25, _posX + 25, _posY + 25);
-			(HBRUSH)SelectObject(_backHdc, oldBrush);
-			DeleteObject(brush);
+			_gameObj.Render(_backHdc);
 			BitBlt(_hdc, 0, 0, _width, _height, _backHdc, 0, 0, SRCCOPY);
 		}
 	}

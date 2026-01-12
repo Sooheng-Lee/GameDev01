@@ -1,5 +1,6 @@
 #pragma once
 #include "CommonHeader.h"
+#include "devGameObject.h"
 
 namespace dev
 {
@@ -34,9 +35,9 @@ namespace dev
 		std::thread* _renderThread;
 		std::thread* _inputThread;
 
-		float _posX;
-		float _posY;
-		
+		GameObject _gameObj;
+		GdiplusStartupInput gdiplusStartupInput;
+		ULONG_PTR gdiplusToken;
 	};
 }
 

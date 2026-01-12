@@ -11,6 +11,15 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)devObject.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)devGameObject.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)devComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)devSpriteRenderer.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)devApplication.h" />
@@ -32,6 +41,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Enum.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)devGameObject.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)devComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)devSpriteRenderer.h">
+      <Filter>Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Managers">
@@ -42,6 +60,9 @@
     </Filter>
     <Filter Include="Headers">
       <UniqueIdentifier>{a72bd9e0-a171-4aaa-9558-ad02c52b7050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{16a711b8-5765-4cd0-aa06-05d9731781f5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

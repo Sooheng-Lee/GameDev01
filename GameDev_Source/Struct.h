@@ -8,4 +8,10 @@ namespace dev
 		eKeyCode code;
 		bool bPressed;
 	};
+
+	struct Vector2
+	{
+		float x;
+		float y;
+	};
 }
