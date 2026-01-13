@@ -3,7 +3,6 @@
 namespace dev
 {
 	std::vector<Key> InputManager::_keys;
-	std::atomic<bool> InputManager::_bInputReceiving = false;
 	std::thread* InputManager::_inputThread = nullptr;
 
 	const static UINT ASCII[] = {
@@ -25,7 +24,7 @@ namespace dev
 
 	void InputManager::Init()
 	{
-		size_t keyNum = static_cast<size_t>(eKeyCode::END);
+		UINT keyNum = static_cast<UINT>(eKeyCode::END);
 		_keys.resize(keyNum);
 		for (int idx = 0; idx < keyNum; ++idx)
 		{
@@ -37,10 +36,7 @@ namespace dev
 
 	void InputManager::Update()
 	{
-		while (_bInputReceiving.load())
-		{
-			CheckKeyState();
-		}
+		CheckKeyState();
 	}
 
 	void InputManager::CheckKeyState()
@@ -74,23 +70,6 @@ namespace dev
 				}
 				_keys[idx].bPressed = false;
 			}
-		}
-	}
-
-	void InputManager::BeginInput()
-	{
-		_bInputReceiving.store(true);
-		_inputThread = new std::thread(&InputManager::Update);
-		_inputThread->detach();
-	}
-
-	void InputManager::EndInput()
-	{
-		if (_inputThread->joinable())
-		{
-			_bInputReceiving = false;
-			_inputThread->join();
-			_inputThread = nullptr;
 		}
 	}
 }

@@ -16,9 +16,6 @@ namespace dev
 		static void Update();
 		static void CheckKeyState();
 
-		static void BeginInput();
-		static void EndInput();
-
 		static bool GetKey(const eKeyCode& code)
 		{
 			return _keys[(UINT)code].state == eKeyState::Pressed;
@@ -36,7 +33,6 @@ namespace dev
 
 	private:
 		static std::vector<Key> _keys;
-		static std::atomic<bool> _bInputReceiving;
 		static std::thread* _inputThread;
 	};
 }

@@ -4,7 +4,7 @@
 #include "devSpriteRenderer.h"
 namespace dev
 {
-	GameObject::GameObject() : _position{ 0.0f, 0.0f }, _components{}
+	GameObject::GameObject() : _position{ 0.0f, 0.0f }, _components{}, _layer(eLayer::None)
 	{
 	}
 
@@ -37,6 +37,7 @@ namespace dev
 			comp->LateUpdate();
 		}
 
+		/*
 		if (InputManager::GetKey(eKeyCode::A))
 		{
 			_position.x -= 200.0f * TimeManager::DeltaTime();
@@ -56,6 +57,7 @@ namespace dev
 		{
 			_position.y += 200.0f * TimeManager::DeltaTime();
 		}
+		*/
 	}
 
 	void GameObject::Render(HDC hdc)

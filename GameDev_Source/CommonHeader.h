@@ -6,6 +6,7 @@
 #include <functional>
 #include <map>
 #include <vector>
+#include <algorithm>
 
 #include "Enum.h"
 #include "Struct.h"

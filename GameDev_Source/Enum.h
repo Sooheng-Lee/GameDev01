@@ -18,4 +18,12 @@ namespace dev
 		Released,
 		None,
 	};
+
+	enum class eLayer
+	{
+		None,
+		Background,
+		GameObject,
+		Effect,
+	};
 }

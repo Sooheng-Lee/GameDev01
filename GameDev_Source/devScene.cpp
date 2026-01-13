@@ -12,6 +12,9 @@ namespace dev
 
 	void Scene::Init()
 	{
+		std::sort(_objects.begin(), _objects.end(), [](GameObject* a, GameObject* b) {
+			return (UINT)a->GetLayer() < (UINT)b->GetLayer();
+			});
 		for (GameObject* obj : _objects)
 		{
 			obj->Init();

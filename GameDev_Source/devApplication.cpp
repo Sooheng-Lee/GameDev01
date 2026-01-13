@@ -1,7 +1,8 @@
 #include "devApplication.h"
 #include "devTimeManager.h"
 #include "devInputManager.h"
-
+#include "devSceneManager.h"
+#include "../GameDev_Contents/devTitleScene.h"
 namespace dev
 {
 	Application::Application() : _hwnd(nullptr), _hdc(nullptr), _backHdc(nullptr), _backBuffer(nullptr), _width(0), _height(0), _bRendering{ false }, _renderThread(nullptr)
@@ -13,7 +14,6 @@ namespace dev
 	{
 		StopRender();
 		GdiplusShutdown(gdiplusToken);
-		InputManager::EndInput();
 	}
 
 	void Application::Init(HWND hwnd, const UINT& width, const UINT& height)
@@ -26,21 +26,21 @@ namespace dev
 		SetWindowPos(hwnd, nullptr, _width / 3, _height / 3, _width, _height, 0);
 		ShowWindow(_hwnd, 0);
 		_hdc = GetDC(_hwnd);
+		TitleScene* titleScene = new TitleScene();
+		SceneManager::AddScene(L"TitleScene", titleScene);
+		SceneManager::LoadScene(L"TitleScene");
 
 		TimeManager::Init();
-
 		_backBuffer = CreateCompatibleBitmap(_hdc, _width, _height);
 		_backHdc = CreateCompatibleDC(_hdc);
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(_backHdc, _backBuffer);
 		DeleteObject(oldBitmap);
-		InputManager::Init();
 
 		GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, nullptr);
 
 		BeginRender();
-		InputManager::BeginInput();
-
-		_gameObj.Init();
+		InputManager::Init();
+		SceneManager::Init();
 	}
 
 	void Application::BeginRender()
@@ -62,12 +62,13 @@ namespace dev
 	void Application::Update()
 	{
 		TimeManager::Update();
-		_gameObj.Update();
+		InputManager::Update();
+		SceneManager::Update();
 	}
 
 	void Application::LateUpdate()
 	{
-		_gameObj.LateUpdate();
+		SceneManager::LateUpdate();
 	}
 
 	void Application::Render()
@@ -76,6 +77,7 @@ namespace dev
 		{
 			Rectangle(_backHdc, 0, 0, _width, _height);
 			TimeManager::Render(_backHdc);
+			SceneManager::Render(_backHdc);
 			_gameObj.Render(_backHdc);
 			BitBlt(_hdc, 0, 0, _width, _height, _backHdc, 0, 0, SRCCOPY);
 		}

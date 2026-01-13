@@ -14,6 +14,8 @@ namespace dev
 		static void Update();
 		static void LateUpdate();
 		static void Render(HDC hdc);
+		static void AddScene(const std::wstring name, Scene* scene);
+		static void LoadScene(const std::wstring name);
 
 	private:
 		static std::map<std::wstring, Scene*> _scenes;

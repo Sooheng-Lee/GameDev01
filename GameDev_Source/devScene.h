@@ -9,10 +9,10 @@ namespace dev
 		Scene();
 		~Scene();
 
-		void Init();
-		void Update();
-		void LateUpdate();
-		void Render(HDC hdc);
+		virtual void Init();
+		virtual void Update();
+		virtual void LateUpdate();
+		virtual void Render(HDC hdc);
 
 	protected:
 		std::vector<GameObject*> _objects;

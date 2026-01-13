@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="devTitleScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="devTitleScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\archer.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

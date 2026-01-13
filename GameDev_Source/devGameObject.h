@@ -34,10 +34,21 @@ namespace dev
 			_components.push_back(component);
 			return component;
 		}
+
+		void SetLayer(eLayer layer)
+		{
+			_layer = layer;
+		}
+
+		eLayer GetLayer()
+		{
+			return _layer;
+		}
 		
-	private:
+	protected:
 		Vector2 _position;
 		std::vector<Component*> _components;
+		eLayer _layer;
 	};
 }
 
