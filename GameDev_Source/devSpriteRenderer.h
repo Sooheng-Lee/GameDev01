@@ -6,7 +6,7 @@ namespace dev
 	class SpriteRenderer : public Component
 	{
 	public:
-		SpriteRenderer();
+		SpriteRenderer(INT width, INT height);
 		~SpriteRenderer();
 		void Render(HDC hdc) override;
 	public:
@@ -25,6 +25,8 @@ namespace dev
 	private:
 		Image* _image;
 		GameObject* _owner;
+		INT _width;
+		INT _height;
 	};
 }
 

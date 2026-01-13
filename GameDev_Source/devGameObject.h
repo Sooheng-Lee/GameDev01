@@ -26,10 +26,19 @@ namespace dev
 			return _position;
 		}
 
-		template <typename T>
-		T* AddComponent()
+		void SetScale(const Vector2& scale)
 		{
-			T* component = new T();
+			_scale = scale;
+		}
+
+		Vector2 GetScale()
+		{
+			return _scale;
+		}
+
+		template <typename T>
+		T* AddComponent(T* component)
+		{
 			component->SetOwner(this);
 			_components.push_back(component);
 			return component;
@@ -47,6 +56,7 @@ namespace dev
 		
 	protected:
 		Vector2 _position;
+		Vector2 _scale;
 		std::vector<Component*> _components;
 		eLayer _layer;
 	};

@@ -14,8 +14,6 @@ namespace dev
 
 	void GameObject::Init()
 	{
-		SpriteRenderer* renderer = AddComponent<SpriteRenderer>();
-		renderer->SetImagePath(L"../GameDev_Contents/Resources/archer.png");
 		for (Component* comp : _components)
 		{
 			comp->Init();

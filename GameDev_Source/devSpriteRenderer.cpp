@@ -2,7 +2,7 @@
 
 namespace dev
 {
-	SpriteRenderer::SpriteRenderer() : _image(nullptr)
+	SpriteRenderer::SpriteRenderer(INT width, INT height) : _image(nullptr), _width(width), _height(height)
 	{
 	}
 
@@ -15,7 +15,7 @@ namespace dev
 		if (_image)
 		{
 			Graphics graphics(hdc);
-			graphics.DrawImage(_image, (INT)GetOwner()->GetPosition().x, (INT)GetOwner()->GetPosition().y, 100, 100);
+			graphics.DrawImage(_image, (INT)GetOwner()->GetPosition().x, (INT)GetOwner()->GetPosition().y, static_cast<INT>(_width * GetOwner()->GetScale().x), static_cast<INT>(_height * GetOwner()->GetScale().y));
 		}
 	}
 

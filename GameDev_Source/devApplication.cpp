@@ -76,9 +76,8 @@ namespace dev
 		while (_bRendering.load())
 		{
 			Rectangle(_backHdc, 0, 0, _width, _height);
-			TimeManager::Render(_backHdc);
 			SceneManager::Render(_backHdc);
-			_gameObj.Render(_backHdc);
+			TimeManager::Render(_backHdc);
 			BitBlt(_hdc, 0, 0, _width, _height, _backHdc, 0, 0, SRCCOPY);
 		}
 	}
